@@ -22,11 +22,13 @@ const PokemonLists = () => {
 
     if (PokemonLists.data) {
       return (
-        <>
-          {PokemonLists.data.map((pokemonList, index) => {
-            return <PokemonCard key={index} name={pokemonList.name} />;
-          })}
-        </>
+        <div className="row my-5 g-4">
+          {PokemonLists.data.map((pokemonList, index) => (
+            <div className="col-sm-12 col-md-4">
+              <PokemonCard key={index} name={pokemonList.name} />
+            </div>
+          ))}
+        </div>
       );
     }
 
