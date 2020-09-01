@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const SearchBar = () => {
   return (
@@ -9,9 +10,13 @@ const SearchBar = () => {
         placeholder="Search"
         aria-label="Search"
       />
-      <button className="btn btn-outline-success" type="submit">
+      <NavLink
+        to="/pokemon/test"
+        className="btn btn-outline-info searchBtn"
+        type="submit"
+      >
         Search
-      </button>
+      </NavLink>
     </form>
   );
 };

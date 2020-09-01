@@ -1,7 +1,6 @@
 import React from 'react';
 
-const PokemonDetails = (props) => {
-  console.log(props);
+const PokemonDetails = () => {
   return <div>PokemonDetails</div>;
 };
 

@@ -9,7 +9,12 @@
 
 button:active,
 button:focus,
+.searchBtn,
 input:active,
 input:focus {
   box-shadow: none !important;
+}
+
+.searchBtn:hover {
+  transform: scale(1.1);
 }
