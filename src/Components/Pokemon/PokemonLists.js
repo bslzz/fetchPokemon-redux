@@ -22,9 +22,9 @@ const PokemonLists = () => {
     if (PokemonLists.data) {
       return (
         <div className="row my-5 g-4">
-          {PokemonLists.data.map((pokemonList, i) => (
+          {PokemonLists.data.map((pokemonList, index) => (
             <div className="col-sm-12 col-md-4">
-              <PokemonCard key={i} name={pokemonList.name} />
+              <PokemonCard key={index} name={pokemonList.name} />
             </div>
           ))}
         </div>
