@@ -7,9 +7,10 @@ const PokemonCard = ({ name }) => {
       className="card mx-auto bg-light shadow rounded"
       style={{ maxWidth: '20rem' }}
     >
-      <div className="card-header capitalize">Pokemon</div>
+      <div className="card-header">
+        <span className="text-info text-capitalize">{name}</span>
+      </div>
       <div className="card-body">
-        <h5 className="card-title">Name: {name}</h5>
         <Link className="btn btn-primary" to={`/pokemon/${name}`}>
           View
         </Link>
