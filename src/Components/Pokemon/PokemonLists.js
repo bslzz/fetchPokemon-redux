@@ -8,12 +8,11 @@ const PokemonLists = () => {
   const PokemonLists = useSelector((state) => state.PokemonLists);
 
   useEffect(() => {
+    const FetchData = (page) => {
+      dispatch(getPokemonLists(page));
+    };
     FetchData(1);
-  }, []);
-
-  const FetchData = (page = 1) => {
-    dispatch(getPokemonLists(page));
-  };
+  }, [dispatch]);
 
   const ShowData = () => {
     if (PokemonLists.loading) {
@@ -23,9 +22,9 @@ const PokemonLists = () => {
     if (PokemonLists.data) {
       return (
         <div className="row my-5 g-4">
-          {PokemonLists.data.map((pokemonList, index) => (
+          {PokemonLists.data.map((pokemonList, i) => (
             <div className="col-sm-12 col-md-4">
-              <PokemonCard key={index} name={pokemonList.name} />
+              <PokemonCard key={i} name={pokemonList.name} />
             </div>
           ))}
         </div>
