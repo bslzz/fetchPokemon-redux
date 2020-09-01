@@ -10,7 +10,6 @@ export const getPokemonLists = (page) => async (dispatch) => {
     const res = await axios.get(
       `https://pokeapi.co/api/v2/pokemon?limit=${perPage}&offset=${offSet}`
     );
-    console.log(res);
     dispatch({
       type: 'POKEMON_LIST_SUCCESS',
       payload: res.data,
