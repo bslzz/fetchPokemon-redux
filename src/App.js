@@ -7,16 +7,16 @@ import { Redirect } from 'react-router-dom';
 
 const App = () => {
   return (
-    <>
-      <Router>
-        <NavBar />
+    <Router>
+      <NavBar />
+      <main className="container">
         <Switch>
           <Route exact path="/" component={PokemonLists} />
           <Route path="/pokemon/:pokemon" component={PokemonDetails} />
           <Redirect to="/" />
         </Switch>
-      </Router>
-    </>
+      </main>
+    </Router>
   );
 };
 
