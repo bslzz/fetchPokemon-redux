@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { PokemonDetail } from '../../redux/actions/pokemonActions';
 import PokemonSummary from './PokemonSummary';
+import PokemonPics from './PokemonPics';
 
 const PokemonDetails = (props) => {
   const pokemonName = props.match.params.pokemon;
@@ -14,12 +15,12 @@ const PokemonDetails = (props) => {
 
   console.log(PokemonDetails);
   const showData = () => {
-    const pokemonData = PokemonDetails.data[pokemonName];
-    if (pokemonData) {
+    if (PokemonDetails.data[pokemonName]) {
+      const pokemonData = PokemonDetails.data[pokemonName];
       return (
-        <>
-          <div>
-            <PokemonSummary
+        <div className="row">
+          <div className="col-md-4">
+            <PokemonPics
               weight={pokemonData.weight}
               pic={pokemonData.sprites.front_default}
               pic1={pokemonData.sprites.back_default}
@@ -27,7 +28,23 @@ const PokemonDetails = (props) => {
               pic3={pokemonData.sprites.back_shiny}
             />
           </div>
-        </>
+          <div className="col-md-4">
+            <h1>Stats</h1>
+            {pokemonData.stats.map((el, index) => (
+              <PokemonSummary
+                key={index}
+                statName={el.stat.name}
+                baseStat={el.base_stat}
+              />
+            ))}
+          </div>
+          <div className="col-md-4">
+            <h1>Abilities</h1>
+            {pokemonData.abilities.map((el, index) => (
+              <PokemonSummary key={index} abilityName={el.ability.name} />
+            ))}
+          </div>
+        </div>
       );
     }
 
@@ -42,7 +59,7 @@ const PokemonDetails = (props) => {
 
   return (
     <div className="py-5 my-5 shadow p-3 mb-5 rounded">
-      <h1>
+      <h1 className="text-center mb-5">
         Name: <span className="text-info text-capitalize">{pokemonName}</span>
       </h1>
       {showData()}

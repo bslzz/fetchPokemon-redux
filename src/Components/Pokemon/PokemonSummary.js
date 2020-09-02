@@ -1,31 +1,18 @@
 import React from 'react';
 
-const PokemonSummary = ({
-  weight,
-  pic,
-  pic1,
-  pic2,
-  pic3,
-  statName,
-  baseStat,
-}) => {
+const PokemonSummary = ({ statName, baseStat, abilityName }) => {
   return (
-    <div class="row">
-      <div class="col-md-4">
-        <img className="img-fluid" src={pic} alt="random" />
-        <img className="img-fluid" src={pic1} alt="random" />
-        <img className="img-fluid" src={pic2} alt="random" />
-        <img className="img-fluid" src={pic3} alt="random" />
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            {statName}: {baseStat}
+    <div className="row">
+      <div className="col">
+        <div className="col-6">
+          <p>
+            <span className="text-capitalize">
+              {statName} <span className="text-info">{baseStat}</span>
+            </span>
           </p>
-          <p class="card-text">
-            <small class="text-muted">{weight}</small>
-          </p>
+        </div>
+        <div className="col-6">
+          <h6 className="text-capitalize">{abilityName}</h6>
         </div>
       </div>
     </div>
