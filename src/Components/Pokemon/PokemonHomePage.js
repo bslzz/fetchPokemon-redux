@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const PokemonCard = ({ name }) => {
+const PokemonHomePage = ({ name }) => {
   return (
     <div
       className="card mx-auto bg-light shadow rounded"
@@ -10,6 +10,7 @@ const PokemonCard = ({ name }) => {
       <div className="card-header">
         <span className="text-info text-capitalize">{name}</span>
       </div>
+
       <div className="card-body">
         <Link className="btn btn-primary" to={`/pokemon/${name}`}>
           View
@@ -19,4 +20,4 @@ const PokemonCard = ({ name }) => {
   );
 };
 
-export default PokemonCard;
+export default PokemonHomePage;

@@ -18,31 +18,33 @@ const PokemonDetails = (props) => {
     if (PokemonDetails.data[pokemonName]) {
       const pokemonData = PokemonDetails.data[pokemonName];
       return (
-        <div className="row">
-          <div className="col-md-4">
-            <PokemonPics
-              weight={pokemonData.weight}
-              pic={pokemonData.sprites.front_default}
-              pic1={pokemonData.sprites.back_default}
-              pic2={pokemonData.sprites.front_shiny}
-              pic3={pokemonData.sprites.back_shiny}
-            />
-          </div>
-          <div className="col-md-4">
-            <h1>Stats</h1>
-            {pokemonData.stats.map((el, index) => (
-              <PokemonSummary
-                key={index}
-                statName={el.stat.name}
-                baseStat={el.base_stat}
+        <div className="container">
+          <div className="row">
+            <div className="col-md-4 mb-3">
+              <PokemonPics
+                weight={pokemonData.weight}
+                pic={pokemonData.sprites.front_default}
+                pic1={pokemonData.sprites.back_default}
+                pic2={pokemonData.sprites.front_shiny}
+                pic3={pokemonData.sprites.back_shiny}
               />
-            ))}
-          </div>
-          <div className="col-md-4">
-            <h1>Abilities</h1>
-            {pokemonData.abilities.map((el, index) => (
-              <PokemonSummary key={index} abilityName={el.ability.name} />
-            ))}
+            </div>
+            <div className="col-md-4 mb-3">
+              <h1 className="text-uppercase">Stats</h1>
+              {pokemonData.stats.map((el, index) => (
+                <PokemonSummary
+                  key={index}
+                  statName={el.stat.name}
+                  baseStat={el.base_stat}
+                />
+              ))}
+            </div>
+            <div className="col-md-4">
+              <h1 className="text-uppercase">Abilities</h1>
+              {pokemonData.abilities.map((el, index) => (
+                <PokemonSummary key={index} abilityName={el.ability.name} />
+              ))}
+            </div>
           </div>
         </div>
       );
