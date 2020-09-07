@@ -23,7 +23,7 @@ const PokemonLists = () => {
         pageRangeDisplayed={2}
         marginPagesDisplayed={1}
         onPageChange={(data) => FetchData(data.selected + 1)}
-        containerClassName={'pagination'}
+        containerClassName="pagination"
         activeLinkClassName="activePage"
       />
     </>

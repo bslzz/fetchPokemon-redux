@@ -21,9 +21,9 @@ input:focus {
 
 .pagination {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
-  width: 50vw;
+  width: 70vw;
   list-style: none;
   margin: auto;
   padding: 2rem 0;
