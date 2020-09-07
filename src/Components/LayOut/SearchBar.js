@@ -12,6 +12,7 @@ const SearchBar = () => {
   const searchPokemon = (e) => {
     e.preventDefault();
     history.push(`/pokemon/${searchBar}`.toLowerCase());
+    setSearchBar('');
   };
 
   return (
