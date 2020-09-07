@@ -6,9 +6,9 @@ const SearchBar = () => {
   const [searchBar, setSearchBar] = useState('');
 
   const searchHandler = (e) => {
+    e.preventDefault();
     setSearchBar(e.target.value);
   };
-
   const searchPokemon = (e) => {
     e.preventDefault();
     history.push(`/pokemon/${searchBar}`.toLowerCase());
@@ -16,7 +16,7 @@ const SearchBar = () => {
 
   return (
     <>
-      <form className="d-flex" onClick={searchPokemon}>
+      <form className="d-flex">
         <input
           className="form-control mr-2"
           type="search"
@@ -29,6 +29,7 @@ const SearchBar = () => {
           to="/pokemon/test"
           className="btn btn-outline-info searchBtn"
           type="submit"
+          onClick={searchPokemon}
         >
           Search
         </NavLink>

@@ -13,7 +13,6 @@ const PokemonDetails = (props) => {
     dispatch(PokemonDetail(pokemonName));
   }, [dispatch, pokemonName]);
 
-  console.log(PokemonDetails);
   const showData = () => {
     if (PokemonDetails.data[pokemonName]) {
       const pokemonData = PokemonDetails.data[pokemonName];
@@ -49,10 +48,10 @@ const PokemonDetails = (props) => {
         </div>
       );
     }
-
     if (PokemonDetails.loading) {
       return <p>Loading...</p>;
     }
+
     if (PokemonDetails.errorMsg !== '') {
       return <p>{PokemonDetails.errorMsg}</p>;
     }

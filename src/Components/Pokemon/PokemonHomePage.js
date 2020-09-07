@@ -13,7 +13,7 @@ const PokemonHomePage = ({ name }) => {
 
       <div className="card-body">
         <Link className="btn btn-primary" to={`/pokemon/${name}`}>
-          View
+          Details
         </Link>
       </div>
     </div>
